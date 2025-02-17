@@ -1,0 +1,30 @@
+// Variables aléatoires
+$random-color-1: #ff6b6b;
+$random-color-2: #4ecdc4;
+$random-spacing: random(50) + px;
+
+// Classes avec des styles aléatoires
+.random-container {
+  padding: $random-spacing;
+  background: linear-gradient(45deg, $random-color-1, $random-color-2);
+  border-radius: 12px;
+  
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}
+
+.random-element {
+  margin: random(20) + px;
+  font-size: random(24) + 16 + px;
+  color: mix($random-color-1, $random-color-2, random(100));
+  
+  &::before {
+    content: '';
+    display: block;
+    width: random(100) + px;
+    height: random(100) + px;
+    background-color: rgba(random(255), random(255), random(255), 0.5);
+  }
+}
