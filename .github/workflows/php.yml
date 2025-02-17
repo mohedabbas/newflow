@@ -1,0 +1,21 @@
+name: Simple PHP CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Basic lint check of all .php files
+      - name: Lint PHP files
+        run: |
+          find . -name '*.php' -exec php -l {} \;
